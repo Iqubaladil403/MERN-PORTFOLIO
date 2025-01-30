@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:#0A192F;
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#013f3c7f; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #013f3c7f; 
+
+}
+
+i{
+  cursor:pointer;
+}
+i:hover{
+  color:white;
+  font-size:27px;
+}
+
+/* Fullscreen Background */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  gap: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+}
+
+/* Md Animation - Rotating with Glow Effect */
+.text-md {
+  color: #1e90ff;
+  text-shadow: 0 0 20px #1e90ff, 0 0 40px #1e90ff, 0 0 60px #1e90ff;
+  animation: rotateText 4s infinite ease-in-out;
+}
+
+/* Adil Animation - Glowing with Pulse Effect */
+.text-adil {
+  color: #ff6347;
+  text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347;
+  animation: pulseText 2s infinite;
+}
+
+/* Iqubal Animation - Bounce with Color Change */
+.text-iqbal {
+  color: #32cd32;
+  text-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #32cd32;
+  animation: bounceText 3s infinite alternate;
+}
+
+/* Rotate Keyframes */
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Pulse Keyframes */
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Bounce Keyframes */
+@keyframes bounceText {
+  0% {
+    transform: translateY(0);
+    color: #32cd32;
+  }
+  50% {
+    transform: translateY(-20px);
+    color: #ffffff;
+  }
+  100% {
+    transform: translateY(0);
+    color: #32cd32;
+  }
+}
