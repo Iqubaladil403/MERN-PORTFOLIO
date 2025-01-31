@@ -1,3 +1,5 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 import { message } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -57,7 +59,7 @@ function AdminAbout() {
       const tempSkills = skills.split(",");
       objData.skills = tempSkills;
         dispatch(showLoading())
-        const response=await axios.post("/api/portfolio/update-about",
+        const response=await axios.post(`${API_URL}/api/portfolio/update-about`,
             objData,
 
         )

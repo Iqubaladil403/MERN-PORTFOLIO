@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import { message, Modal } from "antd";
 import axios from "axios";
 import React, { useState } from "react";
@@ -40,7 +41,7 @@ function AdminCourse() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/portfolio/update-course",
+        `${API_URL}/api/portfolio/update-course`,
         objData
       );
       console.log("res data is", response.data);
@@ -65,7 +66,7 @@ function AdminCourse() {
 
       dispatch(showLoading());
       const response = await axios.delete(
-        "/api/portfolio/delete-course",
+        `${API_URL}/api/portfolio/delete-course`,
         { data: { _id: item._id } }
       );
       if (response.data.success) {

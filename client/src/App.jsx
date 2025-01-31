@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,7 +18,7 @@ function App() {
   async function getData() {
     try {
       dispatch(showLoading());
-      const response = await axios.get('/api/portfolio/get-portfolio-data');
+      const response = await axios.get(`${API_URL}/api/portfolio/get-portfolio-data`);
       dispatch(setPortfolioData(response.data));
       dispatch(ReloadData(false))
     } catch (error) {

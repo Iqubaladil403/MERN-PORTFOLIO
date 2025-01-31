@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import { message, Modal } from "antd";
 import axios from "axios";
 import React, { useState } from "react";
@@ -42,7 +43,7 @@ function AdminExperience() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/portfolio/update-experience",
+        `${API_URL}/api/portfolio/update-experience`,
         objData
       );
 
@@ -64,7 +65,7 @@ function AdminExperience() {
     try {      
       dispatch(showLoading());
       const response = await axios.delete(
-        "/api/portfolio/delete-experience",
+        `${API_URL}/api/portfolio/delete-experience`,
         { data: { _id: item._id } }
       )
       ;

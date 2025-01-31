@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import { message } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -58,7 +59,7 @@ function AdminIntro() {
     }
     try {
         dispatch(showLoading())
-        const response=await axios.post("api/portfolio/update-intro",
+        const response=await axios.post(`${API_URL}api/portfolio/update-intro`,
             objData,
         )
         if(response.data.success){

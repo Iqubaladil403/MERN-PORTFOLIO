@@ -1,4 +1,5 @@
-import { message } from "antd";
+
+const API_URL = import.meta.env.VITE_API_URL;import { message } from "antd";
 import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -17,7 +18,7 @@ function AdminLogin() {
             e.preventDefault();
             console.log(data);
             dispatch(showLoading());
-            const response=await axios.post("/api/portfolio/admin-login",
+            const response=await axios.post(`${API_URL}/api/portfolio/admin-login`,
                 data
             );
             dispatch(hideLoading());

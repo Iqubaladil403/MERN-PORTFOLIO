@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import { message, Modal } from "antd";
 import axios from "axios";
 import React, { useState } from "react";
@@ -47,7 +48,7 @@ function AdminProject() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/portfolio/update-project",
+        `${API_URL}/api/portfolio/update-project`,
         objData
       );
 
@@ -70,7 +71,7 @@ function AdminProject() {
     try {
       dispatch(showLoading());
       const response = await axios.delete(
-        "/api/portfolio/delete-project",
+        `${API_URL}/api/portfolio/delete-project`,
         { data: { _id: item._id } }
       );
 

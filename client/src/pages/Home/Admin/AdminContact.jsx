@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import { message } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -72,7 +73,7 @@ function AdminContact() {
     console.log(objData);
     try {
         dispatch(showLoading())
-        const response=await axios.post("/api/portfolio/update-contact",
+        const response=await axios.post(`${API_URL}/api/portfolio/update-contact`,
             objData,
 
         )
